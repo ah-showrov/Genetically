@@ -144,8 +144,8 @@ const Blog = () => {
                 );
               })}
             </Grid>
-            <Grid item xs={12} sm={3}>
-              <Typography variant="h5" className="filter-heading">
+            <Grid item xs={12} sm={3} className="filter-column">
+              <Typography variant="h6" className="filter-heading">
                 {" "}
                 Filter by categories
               </Typography>
@@ -153,14 +153,13 @@ const Blog = () => {
                 {uniqueCategory.map((value, index) => {
                   return (
                     <Box className="checkbox-inner-container">
-                      <label for="vehicle2" className="checkbox-label">
+                      <label htmlFor={value?.id} className="checkbox-label">
                         <input
                           onChange={(e) => {
                             handleOnChange(e);
                           }}
                           type="checkbox"
-                          id="vehicle2"
-                          name="vehicle2"
+                          id={value?.id}
                           value={value}
                         />
                         {value}
