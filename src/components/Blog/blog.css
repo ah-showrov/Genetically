@@ -11,8 +11,13 @@
 .blog-top-short-description {
   font-size: 16px;
   color: #032e54;
-  margin-top: 15px !important;
+  margin-top: 17px !important;
   margin-bottom: 15px !important;
+}
+.subscribe-link {
+  color: #032e54;
+  font-weight: 500 !important;
+  font-size: 17px;
 }
 .blog-container {
   background: #032e54;
@@ -45,4 +50,30 @@
 .blog-article-right-part {
   width: 20%;
   text-align: right;
+}
+
+/* Checkbox Style part */
+
+.checkbox-outer-container {
+  margin-top: 47px;
+}
+.filter-heading {
+  margin-top: 17px !important;
+  color: #032e54;
+  font-weight: 500 !important;
+}
+.checkbox-inner-container {
+  margin-bottom: 15px;
+  color: #032e54;
+  font-size: 19px;
+}
+.checkbox-label {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-inner-container > .checkbox-label input[type="checkbox"] {
+  height: 19px;
+  width: 19px;
+  margin-right: 10px;
 }

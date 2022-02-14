@@ -6,12 +6,7 @@ import RestoreIcon from "@mui/icons-material/Restore";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { Container, Typography, Grid, Box } from "@material-ui/core";
-import { Button, Checkbox, FormControlLabel } from "@mui/material";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
+import { Button } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import CommentIcon from "@mui/icons-material/Comment";
 import database from "../firedb";
@@ -78,7 +73,7 @@ const Blog = () => {
     <>
       {" "}
       <Box className="blog-main-container">
-        <Container maxWidth="md" className="blog-main-container">
+        <Container maxWidth="md">
           <Typography variant="h3" className="blog-top-heading">
             Genetically Blog
           </Typography>
@@ -90,7 +85,11 @@ const Blog = () => {
                 className="blog-top-short-description"
               >
                 Quam elementum pulvinar etiam non quam lacus suspendisse.
-                Pharetra et ultrices neque ornare subscribe here.
+                Pharetra et ultrices neque ornare{" "}
+                <a href="/" className="subscribe-link">
+                  {" "}
+                  subscribe here.
+                </a>{" "}
               </Typography>
 
               {uiBlogs.map((blog, index) => {
@@ -146,28 +145,29 @@ const Blog = () => {
               })}
             </Grid>
             <Grid item xs={12} sm={3}>
-              <Typography variant="h5"> Filter by categories</Typography>
-              <Box>
-                <Box>
-                  {uniqueCategory.map((value, index) => {
-                    return (
-                      <Box>
-                        <label for="vehicle2">
-                          <input
-                            onChange={(e) => {
-                              handleOnChange(e);
-                            }}
-                            type="checkbox"
-                            id="vehicle2"
-                            name="vehicle2"
-                            value={value}
-                          />
-                          {value}
-                        </label>
-                      </Box>
-                    );
-                  })}
-                </Box>
+              <Typography variant="h5" className="filter-heading">
+                {" "}
+                Filter by categories
+              </Typography>
+              <Box className="checkbox-outer-container">
+                {uniqueCategory.map((value, index) => {
+                  return (
+                    <Box className="checkbox-inner-container">
+                      <label for="vehicle2" className="checkbox-label">
+                        <input
+                          onChange={(e) => {
+                            handleOnChange(e);
+                          }}
+                          type="checkbox"
+                          id="vehicle2"
+                          name="vehicle2"
+                          value={value}
+                        />
+                        {value}
+                      </label>
+                    </Box>
+                  );
+                })}
               </Box>
             </Grid>
           </Grid>
