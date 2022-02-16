@@ -11,7 +11,6 @@ import IconButton from "@mui/material/IconButton";
 import CommentIcon from "@mui/icons-material/Comment";
 import database from "../firedb";
 import { useHistory } from "react-router-dom";
-
 const Blog = () => {
   const [uniqueCategory, setUniqueCategory] = useState([]);
   const [checked, setChecked] = React.useState([]);
@@ -31,11 +30,13 @@ const Blog = () => {
   };
 
   useEffect(() => {
-    const blogDetails = [];
+    let blogDetails = [];
     if (checked.length > 0) {
       checked.forEach((blog) => {
-        const item = blogs.find((blg) => blg.keyword === blog);
-        blogDetails.push(item);
+        // const item = blogs.find((blg) => blg.keyword === blog);
+        const item = blogs.filter((blg) => blg.keyword === blog);
+        blogDetails = [...blogDetails, ...item];
+        // blogDetails.push(item);
       });
       setUiBlogs(blogDetails);
     } else {
@@ -79,7 +80,7 @@ const Blog = () => {
           </Typography>
 
           <Grid container spacing={3}>
-            <Grid item xs={12} sm={9}>
+            <Grid item xs={12} md={9}>
               <Typography
                 variant="body1"
                 className="blog-top-short-description"
@@ -144,7 +145,7 @@ const Blog = () => {
                 );
               })}
             </Grid>
-            <Grid item xs={12} sm={3} className="filter-column">
+            <Grid item xs={12} md={3} className="filter-column">
               <Typography variant="h6" className="filter-heading">
                 {" "}
                 Filter by categories
