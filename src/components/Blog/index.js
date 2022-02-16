@@ -7,8 +7,6 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { Container, Typography, Grid, Box } from "@material-ui/core";
 import { Button } from "@mui/material";
-import IconButton from "@mui/material/IconButton";
-import CommentIcon from "@mui/icons-material/Comment";
 import database from "../firedb";
 import { useHistory } from "react-router-dom";
 const Blog = () => {
