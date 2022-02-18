@@ -9,6 +9,7 @@ import { Container, Typography, Grid, Box } from "@material-ui/core";
 import { Button } from "@mui/material";
 import database from "../firedb";
 import { useHistory } from "react-router-dom";
+import Footer from "../Footer/Footer";
 const Blog = () => {
   const [uniqueCategory, setUniqueCategory] = useState([]);
   const [checked, setChecked] = useState([]);
@@ -169,6 +170,7 @@ const Blog = () => {
           </Grid>
         </Container>
       </Box>
+      <Footer />
     </>
   );
 };

@@ -12,7 +12,6 @@ import AdminPage from "../Admin";
 import About from "../About";
 import Blog from "../Blog";
 import GetYourReport from "../GetYourReport";
-
 import * as ROUTES from "../../constants/routes";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@fontsource/roboto/300.css";

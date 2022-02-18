@@ -1,3 +1,6 @@
+.get-your-report-main-container {
+  min-height: 100vh;
+}
 .carousel-caption-first {
   left: 5%;
   text-align: left;
@@ -149,7 +152,8 @@
 .pic2getYourReport {
   position: absolute;
   top: 0px;
-  left: 12px;
+  /* left: 12px; */
+  left: 0;
   bottom: 50px;
   height: 20px;
 }

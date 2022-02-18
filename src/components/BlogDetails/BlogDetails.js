@@ -1,17 +1,10 @@
-import {
-  BottomNavigation,
-  BottomNavigationAction,
-  Box,
-  Container,
-  Typography,
-} from "@material-ui/core";
+import { Box, Container, Typography } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import database from "../firedb";
-import footerLogo from "../Files/footer1.png";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import InstagramIcon from "@mui/icons-material/Instagram";
+
+import Footer from "../Footer/Footer";
+
 import "./BlogDetails.css";
 const BlogDetails = () => {
   const { blogId } = useParams();
@@ -55,32 +48,7 @@ const BlogDetails = () => {
         </Box>
       </Container>
 
-      <BottomNavigation showLabels align="left">
-        <Typography
-          variant="h6"
-          color="inherit"
-          noWrap
-          sx={{ m: 1 }}
-          align="left"
-        >
-          <img noWrap sx={{ flexGrow: 1 }} src={footerLogo} alt="logo"></img>
-        </Typography>
-        <Typography
-          variant="h6"
-          color="inherit"
-          noWrap
-          sx={{ m: 1, mt: 2.1, ml: 0 }}
-          variant="caption"
-        >
-          @All Rights Reserved.
-        </Typography>
-        <BottomNavigationAction label="Company" icon={<footerLogo />} />
-        <BottomNavigationAction label="Contact" />
-        <BottomNavigationAction label="Legal Mentioins" />
-        <BottomNavigationAction icon={<FacebookIcon />} />
-        <BottomNavigationAction icon={<TwitterIcon />} />
-        <BottomNavigationAction icon={<InstagramIcon />} />
-      </BottomNavigation>
+      <Footer />
     </div>
   );
 };
