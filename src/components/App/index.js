@@ -20,6 +20,7 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import BlogDetails from "../BlogDetails/BlogDetails";
+import Contact from "../Contact/Contact";
 
 const App = () => (
   <Router>
@@ -37,6 +38,7 @@ const App = () => (
       <Route path={ROUTES.Blog} component={Blog} />
       <Route path={ROUTES.GetYourReport} component={GetYourReport} />
       <Route path={ROUTES.BlogDetails} component={BlogDetails} />
+      <Route path={ROUTES.Contact} component={Contact} />
     </div>
   </Router>
 );

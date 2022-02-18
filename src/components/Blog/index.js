@@ -11,7 +11,7 @@ import database from "../firedb";
 import { useHistory } from "react-router-dom";
 const Blog = () => {
   const [uniqueCategory, setUniqueCategory] = useState([]);
-  const [checked, setChecked] = React.useState([]);
+  const [checked, setChecked] = useState([]);
   const [blogs, setBlogs] = useState([]);
   const [uiBlogs, setUiBlogs] = useState([]);
   const history = useHistory();
@@ -31,10 +31,8 @@ const Blog = () => {
     let blogDetails = [];
     if (checked.length > 0) {
       checked.forEach((blog) => {
-        // const item = blogs.find((blg) => blg.keyword === blog);
         const item = blogs.filter((blg) => blg.keyword === blog);
         blogDetails = [...blogDetails, ...item];
-        // blogDetails.push(item);
       });
       setUiBlogs(blogDetails);
     } else {
@@ -77,8 +75,8 @@ const Blog = () => {
             Genetically Blog
           </Typography>
 
-          <Grid container spacing={3}>
-            <Grid item xs={12} md={9}>
+          <Grid container spacing={3} className="main-grid-container">
+            <Grid item xs={12} md={9} className="first">
               <Typography
                 variant="body1"
                 className="blog-top-short-description"
@@ -143,7 +141,7 @@ const Blog = () => {
                 );
               })}
             </Grid>
-            <Grid item xs={12} md={3} className="filter-column">
+            <Grid item xs={12} md={3} className="filter-column second">
               <Typography variant="h6" className="filter-heading">
                 {" "}
                 Filter by categories
