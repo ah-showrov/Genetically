@@ -167,7 +167,6 @@ const Home = () => (
         <Card.Img src={line1} />
       </Card.Body>
     </Card>
-
     {/*DNA Report Content*/}
     <Card>
       <Card.Body>
@@ -183,7 +182,6 @@ const Home = () => (
         <Card.Img src={group} />
       </Card.Body>
     </Card>
-
     {/*Privacy Content*/}
     <MaterialCard sx={{ padding: 1 }}>
       <Box sx={{ position: "relative" }}>
@@ -225,7 +223,6 @@ const Home = () => (
         </Box>
       </Box>
     </MaterialCard>
-
     {/*Advance Content*/}
     <MaterialCard sx={{ padding: 1 }}>
       <Box sx={{ position: "relative" }}>
@@ -340,7 +337,6 @@ const Home = () => (
       </Grid>
     </MaterialContainer>
     {/**Material Pricing End*/}
-
     {/**Blog*/}
     <MaterialCard sx={{ padding: 1 }}>
       <Box sx={{ position: "relative" }}>
