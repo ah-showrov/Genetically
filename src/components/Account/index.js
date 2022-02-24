@@ -5,7 +5,6 @@ import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import MaterialButton from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import FormControlLabel from "@mui/material/FormControlLabel";
 import Box from "@mui/material/Box";
 import "./account.css";
 

@@ -14,8 +14,8 @@ const BlogDetails = () => {
     const blogRef = database.ref("Blog");
     blogRef.on("value", (snapshot) => {
       const blogs = snapshot.val();
-
-      setBlogs(blogs);
+      const Blogs = Object.values(blogs);
+      setBlogs(Blogs);
     });
   }, []);
   const matchedBlog = blogs.find((blog) => blog.id == blogId);

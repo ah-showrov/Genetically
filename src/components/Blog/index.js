@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./blog.css";
 
-import RestoreIcon from "@mui/icons-material/Restore";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { Container, Typography, Grid, Box } from "@material-ui/core";
 import { Button } from "@mui/material";
 import database from "../firedb";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Footer from "../Footer/Footer";
 const Blog = () => {
   const [uniqueCategory, setUniqueCategory] = useState([]);
@@ -38,10 +35,11 @@ const Blog = () => {
     } else {
       setUiBlogs(blogs);
     }
-  }, [checked.length, blogs.length]);
+  }, [checked?.length, blogs?.length]);
 
   useEffect(() => {
     const categories = [];
+    console.log(blogs.length);
     blogs.forEach((blog) => {
       const isExist = categories.includes(blog.keyword);
       if (!isExist) {
@@ -49,7 +47,7 @@ const Blog = () => {
       }
     });
     setUniqueCategory(categories);
-  }, [blogs.length]);
+  }, [blogs?.length]);
 
   // get method start
 
@@ -57,7 +55,8 @@ const Blog = () => {
     const blogRef = database.ref("Blog");
     blogRef.on("value", (snapshot) => {
       const blogs = snapshot.val();
-      setBlogs(blogs);
+      const Blogs = Object.values(blogs);
+      setBlogs(Blogs);
     });
   }, []);
 
@@ -89,7 +88,7 @@ const Blog = () => {
                 </a>{" "}
               </Typography>
 
-              {uiBlogs.map((blog, index) => {
+              {Object.values(uiBlogs).map((blog, index) => {
                 const { id, title, content, date, keyword } = blog;
                 return (
                   <Box className="blog-container" key={id}>

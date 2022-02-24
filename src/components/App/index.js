@@ -20,26 +20,46 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import BlogDetails from "../BlogDetails/BlogDetails";
 import Contact from "../Contact/Contact";
-
+import ServiceDetails from "../ServiceDetails/ServiceDetails";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import Context from "../Context/Context";
+import PostBlog from "../Blog/PostBlog";
+import Account from "../Account";
+import Billing from "../Billing/Billing";
 const App = () => (
-  <Router>
-    <div>
-      <Navigation />
-      <hr />
-      <Route exact path={ROUTES.Home} component={Home} />
-      <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
-      <Route path={ROUTES.SIGN_IN} component={SignInPage} />
-      <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} />
-      <Route path={ROUTES.About} component={About} />
-      <Route path={ROUTES.ACCOUNT} component={AccountPage} />
-      <Route path={ROUTES.ADMIN} component={AdminPage} />
-      <Route path={ROUTES.Overview} component={Overview} />
-      <Route path={ROUTES.Blog} component={Blog} />
-      <Route path={ROUTES.GetYourReport} component={GetYourReport} />
-      <Route path={ROUTES.BlogDetails} component={BlogDetails} />
-      <Route path={ROUTES.Contact} component={Contact} />
-    </div>
-  </Router>
+  <Context>
+    <Router>
+      <div>
+        <Navigation />
+        {/* <Route exact path="/" component={Home} /> */}
+        <Route exact path={ROUTES.Home} component={Home} />
+        <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
+        <Route path={ROUTES.SIGN_IN} component={SignInPage} />
+        <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} />
+        <Route path={ROUTES.About} component={About} />
+        <Route path={ROUTES.ADMIN} component={AdminPage} />
+        <Route path={ROUTES.Overview} component={Overview} />
+        <Route path={ROUTES.Blog} component={Blog} />
+        <Route path={ROUTES.BlogDetails} component={BlogDetails} />
+        <Route path={ROUTES.Contact} component={Contact} />
+        <PrivateRoute path="/ServiceDetails/:ServiceId">
+          <ServiceDetails></ServiceDetails>
+        </PrivateRoute>
+        <PrivateRoute path="/blogPost">
+          <PostBlog />
+        </PrivateRoute>
+        <PrivateRoute path={ROUTES.ACCOUNT}>
+          <Account></Account>
+        </PrivateRoute>
+        <PrivateRoute path={ROUTES.GetYourReport}>
+          <GetYourReport></GetYourReport>
+        </PrivateRoute>
+        <PrivateRoute path="/Billing">
+          <Billing></Billing>
+        </PrivateRoute>
+      </div>
+    </Router>
+  </Context>
 );
 
 export default App;

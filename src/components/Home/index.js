@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  Carousel,
-  Button,
-  ButtonGroup,
-  Card,
-  CardGroup,
-  Form,
-  Container,
-} from "react-bootstrap";
+import { Carousel, Card, CardGroup } from "react-bootstrap";
 import logo from "../Files/landing.png";
 import uploadLogo from "../Files/upload.png";
 import report from "../Files/report.png";
@@ -25,21 +17,13 @@ import * as ROUTES from "../../constants/routes";
 import CardMedia from "@mui/material/CardMedia";
 import Box from "@mui/material/Box";
 import MaterialCard from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardHeader from "@mui/material/CardHeader";
-import CssBaseline from "@mui/material/CssBaseline";
 import Grid from "@mui/material/Grid";
-import StarIcon from "@mui/icons-material/StarBorder";
-import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import Link from "@mui/material/Link";
-import GlobalStyles from "@mui/material/GlobalStyles";
 import MaterialContainer from "@mui/material/Container";
 import MaterialButton from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
-import MaterialButtonGroup from "@mui/material/ButtonGroup";
 import Footer from "../Footer/Footer";
+import Services from "../Services/Services";
 const tiers = [
   {
     title: "Free",
@@ -273,68 +257,7 @@ const Home = () => (
     </Card>
     {/**Material Pricing */}
     <MaterialContainer maxWidth="md" component="main">
-      <Grid container spacing={5} alignItems="flex-end">
-        {tiers.map((tier) => (
-          // Enterprise card is full width at sm breakpoint
-          <Grid item spacing={24} key={tier.title} md={4}>
-            <Card>
-              <CardHeader
-                title={tier.title}
-                subheader={tier.subheader}
-                titleTypographyProps={{ align: "center" }}
-                action={tier.title === "Pro" ? <StarIcon /> : null}
-                subheaderTypographyProps={{
-                  align: "center",
-                }}
-                sx={{
-                  backgroundColor: (theme) =>
-                    theme.palette.mode === "light"
-                      ? theme.palette.grey[200]
-                      : theme.palette.grey[700],
-                }}
-              />
-              <CardContent>
-                <Box
-                  sx={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "baseline",
-                    mb: 2,
-                  }}
-                >
-                  <Typography component="h2" variant="h3" color="text.primary">
-                    ${tier.price}
-                  </Typography>
-                  <Typography variant="h6" color="text.secondary">
-                    /mo
-                  </Typography>
-                </Box>
-                <ul>
-                  {tier.description.map((line) => (
-                    <Typography
-                      component="li"
-                      variant="subtitle1"
-                      align="center"
-                      key={line}
-                    >
-                      {line}
-                    </Typography>
-                  ))}
-                </ul>
-              </CardContent>
-              <CardActions>
-                <MaterialButton
-                  fullWidth
-                  variant={tier.buttonVariant}
-                  style={{ backgroundColor: "#032E54", color: "#FFFFFF" }}
-                >
-                  {tier.buttonText}
-                </MaterialButton>
-              </CardActions>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
+      <Services />
     </MaterialContainer>
     {/**Material Pricing End*/}
     {/**Blog*/}

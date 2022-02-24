@@ -9,4 +9,7 @@ export const Overview = "/Overview";
 export const About = "/About";
 export const Blog = "/Blog";
 export const BlogDetails = "/blogDetails/:blogId";
+export const ServiceDetails = "/ServiceDetails/:ServiceId";
 export const Contact = "/Contact";
+export const PostBlog = "/PostBlog";
+export const Billing = "/Billing";
